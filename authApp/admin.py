@@ -1,0 +1,8 @@
+from django.contrib import admin
+from .models import *
+
+# Register your models here.
+
+@admin.register(Profile)
+class profile(admin.ModelAdmin):
+    list_display = ['id','locality','country','state','city','zipcode']
