@@ -5,4 +5,4 @@ from .models import *
 
 @admin.register(Profile)
 class profile(admin.ModelAdmin):
-    list_display = ['id','locality','country','state','city','zipcode']
+    list_display = ['id','locality','country','state','city','zipcode','language']

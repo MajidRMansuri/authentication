@@ -40,7 +40,8 @@ class Profile_edit(View):
             state = form.cleaned_data['state']
             city = form.cleaned_data['city']
             zipcode = form.cleaned_data['zipcode']
-            res = Profile(locality=locality,country=country,state=state,city=city,zipcode=zipcode,user=user)
+            language = form.cleaned_data['language']
+            res = Profile(locality=locality,country=country,state=state,city=city,zipcode=zipcode,user=user,language=language)
             res.save()
             return redirect('index')
         messages.success(request,"Login Successful")

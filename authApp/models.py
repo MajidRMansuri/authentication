@@ -9,3 +9,4 @@ class Profile(models.Model):
     state = models.TextField()
     city = models.TextField()
     zipcode = models.IntegerField()
+    language = models.BooleanField()

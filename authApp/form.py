@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm,UsernameField, PasswordChangeForm,PasswordResetForm, SetPasswordForm
 from django.contrib.auth.models import User
-from django.forms.widgets import TextInput, NumberInput
+from django.forms.widgets import TextInput, NumberInput,CheckboxInput
 from django.utils.translation import gettext_lazy,gettext as _
 from django.forms import ModelForm
 from .models import *
@@ -32,9 +32,10 @@ class Profile_Form(ModelForm):
         model = Profile
         fields = '__all__'
         exclude = ('user',)
-        widgets = {'locality':TextInput,'state':TextInput,'city':TextInput,'zipcode':NumberInput}
-    
+        widgets = {'locality':TextInput,'state':TextInput,'city':TextInput,'zipcode':NumberInput,'language':CheckboxInput}
+
 class PasswordChange(PasswordChangeForm):
+     
     old_password = forms.CharField(
         label=_("Old password"),
         strip=False,
